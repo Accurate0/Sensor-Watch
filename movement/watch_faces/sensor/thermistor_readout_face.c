@@ -58,8 +58,9 @@ bool thermistor_readout_face_loop(movement_event_t event, movement_settings_t *s
     watch_date_time date_time = watch_rtc_get_date_time();
     switch (event.event_type) {
         case EVENT_ALARM_BUTTON_DOWN:
-            settings->bit.use_imperial_units = !settings->bit.use_imperial_units;
-            _thermistor_readout_face_update_display(settings->bit.use_imperial_units);
+            // fahrenheit sucks
+            // settings->bit.use_imperial_units = !settings->bit.use_imperial_units;
+            // _thermistor_readout_face_update_display(false);
             break;
         case EVENT_ACTIVATE:
             // force a measurement to be taken immediately.
@@ -72,7 +73,7 @@ bool thermistor_readout_face_loop(movement_event_t event, movement_settings_t *s
                 // In reality the measurement takes a fraction of a second, but this is just to show something is happening.
                 watch_set_indicator(WATCH_INDICATOR_SIGNAL);
             } else if (date_time.unit.second % 5 == 0) {
-                _thermistor_readout_face_update_display(settings->bit.use_imperial_units);
+                _thermistor_readout_face_update_display(false);
                 watch_clear_indicator(WATCH_INDICATOR_SIGNAL);
             }
             break;

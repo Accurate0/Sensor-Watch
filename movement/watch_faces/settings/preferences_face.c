@@ -133,27 +133,33 @@ bool preferences_face_loop(movement_event_t event, movement_settings_t *settings
             case 3:
                 switch (settings->bit.le_interval) {
                     case 0:
-                        watch_display_string(" Never", 4);
+                        watch_display_string(" 1 min", 4);
                         break;
                     case 1:
-                        watch_display_string("1 hour", 4);
+                        watch_display_string(" 15 min", 4);
                         break;
                     case 2:
-                        watch_display_string("2 hour", 4);
+                        watch_display_string(" Never", 4);
                         break;
                     case 3:
-                        watch_display_string("6 hour", 4);
+                        watch_display_string("1 hour", 4);
                         break;
                     case 4:
-                        watch_display_string("12 hr", 4);
+                        watch_display_string("2 hour", 4);
                         break;
                     case 5:
-                        watch_display_string(" 1 day", 4);
+                        watch_display_string("6 hour", 4);
                         break;
                     case 6:
-                        watch_display_string(" 2 day", 4);
+                        watch_display_string("12 hr", 4);
                         break;
                     case 7:
+                        watch_display_string(" 1 day", 4);
+                        break;
+                    case 8:
+                        watch_display_string(" 2 day", 4);
+                        break;
+                    case 9:
                         watch_display_string(" 7 day", 4);
                         break;
                 }
